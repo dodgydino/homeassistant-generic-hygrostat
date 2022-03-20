@@ -63,7 +63,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
         vol.Optional(CONF_SAMPLE_INTERVAL, default=DEFAULT_SAMPLE_INTERVAL): cv.time_period,
         vol.Optional(CONF_MIN_HUMIDITY, default=DEFAULT_MIN_HUMIDITY): vol.Coerce(float),
         vol.Optional(CONF_SUBSQ_SHOWER_DETECT, default=DEFAULT_SUBSQ_SHOWER_DETECT): cv.string,
-		vol.Optional(CONF_UNIQUE_ID): cv.string,
+	vol.Optional(CONF_UNIQUE_ID): cv.string,
     }
 )
 
@@ -80,7 +80,7 @@ def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
     sample_interval = config.get(CONF_SAMPLE_INTERVAL)
     min_humidity = config.get(CONF_MIN_HUMIDITY)
     subsq_shower_detect = config.get(CONF_SUBSQ_SHOWER_DETECT)
-	unique_id = config.get(CONF_UNIQUE_ID)
+    unique_id = config.get(CONF_UNIQUE_ID)
 
     async_add_devices(
         [
@@ -95,6 +95,7 @@ def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
                 max_on_time,
                 sample_interval,
                 min_humidity,
+		subsq_shower_detect,
                 unique_id,
             )
         ]
@@ -115,7 +116,7 @@ class GenericHygrostat(Entity):
         max_on_time,
         sample_interval,
         min_humidity,
-		subsq_shower_detect,
+	subsq_shower_detect,
         unique_id,
     ):
 
