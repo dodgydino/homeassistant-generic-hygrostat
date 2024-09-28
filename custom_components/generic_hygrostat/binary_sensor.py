@@ -242,7 +242,7 @@ class GenericHygrostat(Entity):
         """Setting max on timer."""
         if self.max_on_timer is None:
             self.max_on_timer = datetime.now() + self.max_on_time
-        elif self.subsq_shower_detect is 'y':
+        elif self.subsq_shower_detect == 'y':
             self.max_on_timer = datetime.now() + self.max_on_time
 
     def reset_max_on_timer(self):
